@@ -1,0 +1,7 @@
+{
+  "appId": "studio.juanchu.cripta",
+  "appName": "Cripta Aleatoria",
+  "webDir": "www",
+  "backgroundColor": "#0d0b14",
+  "android": { "allowMixedContent": false }
+}

@@ -1,0 +1,36 @@
+{
+  "name": "cripta-aleatoria",
+  "version": "2.1.0",
+  "description": "Cripta Aleatoria - Roguelike 3D de mazmorras",
+  "author": "Juanchu Studio",
+  "main": "main.js",
+  "scripts": {
+    "prepare-www": "node prepare.js",
+    "start": "node prepare.js && electron .",
+    "exe": "node prepare.js && electron-builder --win portable",
+    "exe:instalador": "node prepare.js && electron-builder --win nsis",
+    "apk:init": "node prepare.js && npx cap add android",
+    "apk:sync": "node prepare.js && npx cap sync android",
+    "apk:abrir": "npx cap open android"
+  },
+  "dependencies": {
+    "@capacitor/android": "^6.1.0",
+    "@capacitor/core": "^6.1.0",
+    "peerjs": "1.5.4",
+    "three": "0.128.0"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^6.1.0",
+    "electron": "^31.0.0",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "studio.juanchu.cripta",
+    "productName": "Cripta Aleatoria",
+    "files": ["main.js", "www/**/*"],
+    "directories": { "output": "dist" },
+    "win": { "target": ["portable"] },
+    "portable": { "artifactName": "Cripta-Aleatoria.exe" },
+    "nsis": { "artifactName": "Cripta-Aleatoria-Setup.exe" }
+  }
+}
